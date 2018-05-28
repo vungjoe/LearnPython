@@ -21,3 +21,15 @@
 
 (4) 使用input()获得测试用例输入时，不要增加提示字符串。
 '''
+
+Temp = input()
+if Temp[0] == 'C':
+	TempC = eval(Temp[1:])
+	TempF = TempC * 1.8 + 32
+	print("F" + "{:.2f}".format(TempF));
+elif Temp[0] == 'F':
+	TempF = eval(Temp[1:])
+	TempC = (TempF -32) / 1.8
+	print("C" + "{:.2f}".format(TempC))
+else:
+	print('Inleagal input,please try again.')
