@@ -14,3 +14,12 @@
 (1) 这是一个OJ题目，获得输入请使用input()
 '''
 
+Currency = input()
+if Currency[0:3] == 'RMB':
+	CurrencyUSD = eval(Currency[3:]) / 6.78
+	print('USD' + "{:.2f}".format(CurrencyUSD))
+elif Currency[0:3] == 'USD':
+	CurrencyRMB = eval(Currency[3:]) * 6.78
+	print('RMB' + "{:.2f}".format(CurrencyRMB))
+else:
+	print('Inleagal input,please try again.')
