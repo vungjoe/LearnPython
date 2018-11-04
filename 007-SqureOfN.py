@@ -7,8 +7,9 @@
 '''
 
 N = input('Please input a integer:')
-SqureOfN = str(eval(N) ** 2)
-if len(SqureOfN) < 20:
-	print(SqureOfN.center(20,'-'))
+SqureOfN = eval(N) ** 2
+
+if len(str(SqureOfN)) < 20:
+	print(str(SqureOfN).center(20,'-'))
 else:
 	print(SqureOfN)

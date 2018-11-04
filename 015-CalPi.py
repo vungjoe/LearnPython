@@ -2,33 +2,34 @@
 # -*- coding:utf-8 -*-
 
 '''
-¼ÆËã¦ĞµÄÖµ£¬ÓĞÁ½ÖÖ·½°¸£º
+è®¡ç®—Ï€çš„å€¼ï¼Œæœ‰ä¸¤ç§æ–¹æ¡ˆï¼š
 
-- ¹«Ê½·¨
-- Ëæ»úÍ¶µã·¨£¨ÃÉÌØ¿¨ÂŞËã·¨£©
+- å…¬å¼æ³•
+- éšæœºæŠ•ç‚¹æ³•ï¼ˆè’™ç‰¹å¡ç½—ç®—æ³•ï¼‰
 
 '''
 
 import random
 import time
 
-# ·½·¨Ò»£ºÑ¡ÔñÆäÖĞÒ»ÖÖ¹«Ê½À´¼ÆËã
+# æ–¹æ³•ä¸€ï¼šé€‰æ‹©å…¶ä¸­ä¸€ç§å…¬å¼æ¥è®¡ç®—
 pi = 0
 N = 100
 for k in range(N):
-	pi = pi + 1/pow(16,k)*(4/(8*k+1)-2/(8*k+4)-1/(8*k+5)-1/(8*k+6))
-print("¹«Ê½·¨¼ÆËã³öµÄÔ²ÖÜÂÊµÄÖµÊÇ£º{}".format(pi))
+    pi = pi + 1 / pow(16, k) * (4 / (8 * k + 1) - 2 /
+                                (8 * k + 4) - 1 / (8 * k + 5) - 1 / (8 * k + 6))
+print("å…¬å¼æ³•è®¡ç®—å‡ºçš„åœ†å‘¨ç‡çš„å€¼æ˜¯ï¼š{}".format(pi))
 
-# ·½·¨¶ş£ºËæ»úÊıÇó½â
+# æ–¹æ³•äºŒï¼šéšæœºæ•°æ±‚è§£
 
-DARTS = 1000*1000*10
+DARTS = 1000 * 1000 * 10
 hits = 0.0
 start = time.perf_counter()
 for i in range(DARTS):
-	x,y = random.random(),random.random()
-	dist = pow(x**2+y**2,0.5)
-	if dist < 1:
-		hits = hits + 1
-pi = 4 * ( hits / DARTS )
-print("ÃÉÌØ¿¨ÂŞ·¨¼ÆËã³öµÄÔ²ÖÜÂÊµÄÖµÊÇ£º{}".format(pi))
-print("³ÌĞòµÄÔËĞĞÊ±¼äÊÇ£º{:.5f}s".format(time.perf_counter()-start))
+    x, y = random.random(), random.random()
+    dist = pow(x**2 + y**2, 0.5)
+    if dist < 1:
+        hits = hits + 1
+pi = 4 * (hits / DARTS)
+print("è’™ç‰¹å¡ç½—æ³•è®¡ç®—å‡ºçš„åœ†å‘¨ç‡çš„å€¼æ˜¯ï¼š{}".format(pi))
+print("ç¨‹åºçš„è¿è¡Œæ—¶é—´æ˜¯ï¼š{:.5f}s".format(time.perf_counter() - start))
